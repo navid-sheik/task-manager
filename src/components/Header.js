@@ -1,6 +1,8 @@
 
 import PropTypes from 'prop-types'
+import {useLocation} from 'react-router-dom'
 import Button from './Button'
+
 
 
 const Header = ({title,something, onAdd, valueOfShowAdd}) => {
@@ -8,12 +10,19 @@ const Header = ({title,something, onAdd, valueOfShowAdd}) => {
     const onClick = () => {
         console.log('CLick')
     }
+
+
+    //For removing add in the footer
+    //Current path
+    const location  = useLocation()
     return (
         <header>
+            
             <h1 style = {headingStyle}>{title + something}</h1>
+            {location.pathname  === '/'  && (
             <Button color = {valueOfShowAdd ?  'Green'  : 'Black'} text = {valueOfShowAdd ?  'Close'  : 'Add'} onClick = {onAdd}  />
-            <Button color = 'Green'  text = 'Destroy' onClick = {onClick}  />
-            <Button color = 'blue'  text = 'Done' onClick = {onClick}  />
+            )}
+
         </header>
 
     )
