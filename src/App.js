@@ -17,30 +17,7 @@ function App() {
 
 
 
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: 'Appointment doctor',
-      day: 'Feb 5th at 5:30 pm',
-      reminder: true,
-
-    },
-    {
-      id: 2,
-      text: 'Appointment schoool',
-      day: 'March 5th at 5:30 pm',
-      reminder: true,
-
-    },
-
-    {
-      id: 3,
-      text: 'Appointment employee',
-      day: 'Mon 5th at 5:30 pm',
-      reminder: false,
-
-    },
-  ])
+  const [tasks, setTasks] = useState([])
 //Add Tax
 const addTask = (task) => {
   const id =  Math.floor(Math.random() * 10000) + 1
